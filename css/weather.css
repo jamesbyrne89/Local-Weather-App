@@ -1,4 +1,12 @@
-div {
+
+* {
+	font-family: arial, sans-serif;
+}
+
+
+
+
+ {
 	color: hotpink;
-	font-weight: bold;
+	font-weight: normal;
 }
