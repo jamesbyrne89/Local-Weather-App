@@ -6,7 +6,7 @@
  <link rel="stylesheet" href="css/weather-icons-wind.min.css">
 
  <script src="https://use.fontawesome.com/a697955832.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Muli:300,400|Noto+Sans|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
 
 
 
@@ -14,7 +14,7 @@
 <body>
 	
 <!-- Left Section -->
-<div class="wrapper app-container">
+<div class="app-container">
 	<div class="app-left">
 
 	<div id="dateandtime"></div>
@@ -23,7 +23,7 @@
 		<i class="wi wi-day-cloudy current-weather-icon"></i>
 		</span>
 		<div id="weather-description"></div>
-		<span id="current-temp"></span>
+		<span id="current-temp" class="current-temp"></span>
 		<div id="hi-low-temp-wrapper-left">H<span class="high-temp-left"></span>L<span class="low-temp-left"></span></div>
 	</div>
 		
@@ -35,7 +35,7 @@
 
 <div class="app-right">
 	<div class="wrapper wrapper-right-top">
-	<div id="search-button"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+	<div id="location-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
 		<div id="location"></div>
 		    <label class="switch">
     		<input type="checkbox" class="switch-input">
@@ -43,52 +43,55 @@
       			<span class="switch-handle"></span>
     		</label>
 	</div>	 
-		<div class="wrapper wrapper-right-middle">   
+		<div class="wrapper wrapper-right-middle">  
+		<p>Current conditions</p>
 			<ul>
 				<li>
 				<i class="wi wi-wind-direction wi-from-e list-icons"></i>
 				<span class="list wind-speed"></span>
 				</li>
 				<li>
-				<i class="wi wi-cloud list-icons"></i>
-				<span class="list wind-direction"></span>
-				</li>
-				<li> 
-				<i class="wi wi-humidity list-icons"></i>
-				<span class="list humidity"></span> 
+				<i class="wi wi-raindrop list-icons"></i>
+				<span class="list precip-chance"></span>
 				</li>
 				<li> 
 				<i class="wi wi-cloud list-icons"></i>
 				<span class="list cloudiness"></span> 
 				</li>
+				<li> 
+				<i class="wi wi-humidity list-icons"></i>
+				<span class="list humidity"></span> 
+				
+				</li>
 				</ul>
 		</div>
 		<div class="wrapper wrapper-right-bottom"> 
+		<p>5-day forecast</p>
 			<ul>
 				<li>
 				<div class="forecast-day-labels day-one"></div>
-				<i class="wi wi-day-sunny forecast-list-icons"></i>
-				H<span id="day-one-forecast-temp-hi" class="high-temp"></span>L<span id="day-one-forecast-temp-lo" class="low-temp"></span>
+				<i class="wi wi-day-sunny list-icons forecast-list-icons"></i>
+				<span id="day-one-forecast-temp-hi" class="high-temp"></span><span id="day-one-forecast-temp-lo" class="low-temp"></span>
 				</li>
 				<li>
 				<div class="forecast-day-labels day-two"></div>
-				<i class="wi wi-day-sunny forecast-list-icons"></i>
-				H<span id="day-two-forecast-temp-hi" class="high-temp"></span>L<span id="day-two-forecast-temp-lo" class="low-temp"></span>
+				<i class="wi wi-day-sunny list-icons forecast-list-icons"></i>
+				<span id="day-two-forecast-temp-hi" class="high-temp"></span><span id="day-two-forecast-temp-lo" class="low-temp"></span>
 				</li>
 				<li>
 				<div class="forecast-day-labels day-three"></div>
-				<i class="wi wi-day-sunny forecast-list-icons"></i>
-				H<span id="day-three-forecast-temp-hi" class="high-temp"></span>L<span id="day-three-forecast-temp-lo" class="low-temp"></span>
+				<i class="wi wi-day-sunny list-icons forecast-list-icons"></i>
+				<span id="day-three-forecast-temp-hi" class="high-temp"></span><span id="day-three-forecast-temp-lo" class="low-temp"></span>
 				</li>
 				<li>
 				<div class="forecast-day-labels day-four"></div>
-				<i class="wi wi-day-sunny forecast-list-icons"></i>
-				H<span id="day-four-forecast-temp-hi" class="high-temp"></span>L<span id="day-four-forecast-temp-lo" class="low-temp"></span>
+				<i class="wi wi-day-sunny list-icons forecast-list-icons"></i>
+				<span id="day-four-forecast-temp-hi" class="high-temp"></span><span id="day-four-forecast-temp-lo" class="low-temp"></span>
 				</li>
 				<li>
 				<div class="forecast-day-labels day-five"></div>
-				<i class="wi wi-day-sunny forecast-list-icons"></i>
-				H<span id="day-five-forecast-temp-hi" class="high-temp"></span>L<span id="day-five-forecast-temp-lo" class="low-temp"></span>
+				<i class="wi wi-day-sunny list-icons forecast-list-icons"></i>
+				<span id="day-five-forecast-temp-hi" class="high-temp"></span><span id="day-five-forecast-temp-lo" class="low-temp"></span>
 				</li>
 			</ul>
 	</div>

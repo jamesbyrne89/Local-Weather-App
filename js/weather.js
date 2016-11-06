@@ -3,6 +3,7 @@ $(document).ready(function(){
 // Get current location from API
   var lat;
   var lon;
+  var city;
   
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success);
@@ -19,43 +20,42 @@ $(document).ready(function(){
       for (var i=0; i<place.results[0].address_components.length; i++) {
         if (place.results[0].address_components[i].types[0]==="locality") {
           var city = place.results[0].address_components[i].long_name;
-          $("#location").html(city);
+
         }
         if (place.results[0].address_components[i].types[0]==="administrative_area_level_1") {
           var state = place.results[0].address_components[i].long_name;
           $("#state").html(state);
         }
+
       }
     //end success
     function error() {
     alert("Geolocation requires a secure connection to work. Please add 'https://' to the beginning of this page's URL. (i.e. 'https://codepen.io/bethqiang/full/bZrZpa')");
   }
 
- }); //end getJSON
     console.log(lat, lon);
+    
 
 
-  var apiKey = "b86d21440d8c9a110912a2eb0845abb4";
+  var apiKey = "f0357c3104cec9981bd0216276f0778f";
 
 
 // Get current weather from API
 
-$.getJSON('https://api.forecast.io/forecast/' + apiKey + '/'+ lat + ',' + lon + '?callback=?'
+$.getJSON('https://api.forecast.io/forecast/' + apiKey + '/'+ lat + ',' + lon + '?units=si&callback=?'
 , function(wd) {
-console.log("Got today's data ,", wd);
+console.log("Got forecast data: ", wd);
 
-	var currentTemp = wd.main.temp.toFixed(0);
-	var maxTemp = wd.main.temp_max;
-	var minTemp = wd.main.temp_min;
-	var weatherDescription = wd.weather[0].description;
-	var cityName = wd.name;
-	var country = wd.sys.country;
-	var windSpeed = (wd.wind.speed) * 2.23694.toFixed(0);
-	var humidity = wd.main.humidity.toFixed(0);
-	var cloudiness = wd.clouds.all;
-	var windDirection = wd.wind.deg;
-	var sunriseTime = wd.sys.sunrise;
-	var sunsetTime = wd.sys.sunset;
+	var currentTemp = wd.currently.temperature.toFixed(0);
+	var maxTemp = wd.daily.data[0].temperatureMax.toFixed(0);
+	var minTemp = wd.daily.data[0].temperatureMin.toFixed(0);
+	var weatherDescription = wd.currently.summary;
+	var precipChance = ((wd.daily.data[0].precipProbability) * 100).toFixed(0);
+	var windSpeed = ((wd.currently.windSpeed) * 2.23694).toFixed(0);
+	var humidity = ((wd.currently.humidity) * 100).toFixed(0);
+	var cloudiness = wd.currently.cloudCover;
+	var windDirection = wd.currently.windBearing;
+
 
 // Place current weather values into HTML
 
@@ -63,42 +63,43 @@ $('#current-temp').html(currentTemp + "&deg;");
 $('.high-temp-left').html(maxTemp + "&deg;");
 $('.low-temp-left').html(minTemp + "&deg;");
 $('#weather-description').html(weatherDescription);
-$('#location').html(cityName + ", " + country);
-$('.cloudiness').html(cloudiness + "\%");
-$('.humidity').html(humidity + "\%");
+$('#location').html(city);
 $('.wind-speed').html(windSpeed + " mph");
 $('.wind-direction').html(windDirection);
+$('.precip-chance').html(precipChance + "\%");
+$('.cloudiness').html(cloudiness + "\%");
+$('.humidity').html(humidity + "\%");
+
 
 if (weatherDescription == "light rain" || "light intensity shower rain" || "shower rain") {
 	$("#weather-icon-wrapper-left").html('<i class="wi wi-day-showers"></i>');
 }
 
+
 // Get five-day weather forecast from API
 
-$.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat='
-			+ lat + '&lon=' + lon + '&units=metric&cnt=6&appid=' + apiKey, function(wd5) {
-console.log("Got the forecast data", wd5);
 
-	var dayOneMax = wd5.list[1].temp.max.toFixed(0);
-	var dayOneMin = wd5.list[1].temp.min.toFixed(0);
+	var dayOneMax = wd.daily.data[1].temperatureMax.toFixed(0);
+	console.log(dayOneMax);
+	var dayOneMin = wd.daily.data[1].temperatureMin.toFixed(0);
 
-	var dayTwoMax = wd5.list[2].temp.max.toFixed(0);
-	var dayTwoMin = wd5.list[2].temp.min.toFixed(0);
+	var dayTwoMax = wd.daily.data[2].temperatureMax.toFixed(0);
+	var dayTwoMin = wd.daily.data[2].temperatureMin.toFixed(0);
 
-	var dayThreeMax = wd5.list[3].temp.max.toFixed(0);
-	var dayThreeMin = wd5.list[3].temp.min.toFixed(0);
+	var dayThreeMax = wd.daily.data[3].temperatureMax.toFixed(0);
+	var dayThreeMin = wd.daily.data[3].temperatureMin.toFixed(0);
 
-	var dayFourMax = wd5.list[4].temp.max.toFixed(0);
-	var dayFourMin = wd5.list[4].temp.min.toFixed(0);
+	var dayFourMax = wd.daily.data[4].temperatureMax.toFixed(0);
+	var dayFourMin = wd.daily.data[4].temperatureMin.toFixed(0);
 
-	var dayFiveMax = wd5.list[5].temp.max.toFixed(0);
-	var dayFiveMin = wd5.list[5].temp.min.toFixed(0);
+	var dayFiveMax = wd.daily.data[5].temperatureMax.toFixed(0);
+	var dayFiveMin = wd.daily.data[5].temperatureMin.toFixed(0);
 
-	var dayOneWeather = wd5.list[1].weather[0].description;
-	var dayTwoWeather = wd5.list[2].weather[0].description;
-	var dayThreeWeather = wd5.list[3].weather[0].description;
-	var dayFourWeather = wd5.list[4].weather[0].description;
-	var dayFiveWeather = wd5.list[5].weather[0].description;
+	var dayOneWeather = wd.daily.data[1].summary;
+	var dayTwoWeather = wd.daily.data[2].summary;
+	var dayThreeWeather = wd.daily.data[3].summary;
+	var dayFourWeather = wd.daily.data[4].summary;
+	var dayFiveWeather = wd.daily.data[5].summary;
 
 
 
@@ -115,7 +116,7 @@ $('#day-four-forecast-temp-lo').html(dayFourMin + "&deg;");
 $('#day-five-forecast-temp-hi').html(dayFiveMax + "&deg;");
 $('#day-five-forecast-temp-lo').html(dayFiveMin + "&deg;");
 
-
+ 
 // Get date
 
 var days = new Array(7);
@@ -172,10 +173,7 @@ $('.day-five').html(todayPlusFive);
 
 // Calculate fahrenheit
 
- var currentTemp = wd.main.temp.toFixed(0);
  var currentTempFar = ((currentTemp) * (9/5) + 32).toFixed(0);
- var maxTemp = wd.main.temp_max;
- var minTemp = wd.main.temp_min;
  var maxTempFar = ((maxTemp) * (9/5) + 32).toFixed(0);
  var minTempFar = ((minTemp) * (9/5) + 32).toFixed(0);
 
@@ -194,7 +192,7 @@ $('.day-five').html(todayPlusFive);
 
 $("input[type=checkbox]").change(function(){
     if (this.checked){ 
-       	$('#current-temp').html(currentTempFar + "&deg;");
+       	$('#current-temp').addClass('.current-temp-far').removeClass('.current-temp').html(currentTempFar + "&deg;");
        	$('.high-temp-left').html(maxTempFar + "&deg;");
        	$('.low-temp-left').html(minTempFar + "&deg;");
 
@@ -210,7 +208,7 @@ $("input[type=checkbox]").change(function(){
        	$('#day-five-forecast-temp-lo').html(dayFiveMinFar + "&deg;");
     }
     else {
-		$('#current-temp').html(currentTemp + "&deg;");
+		$('#current-temp').addClass('.current-temp').removeClass('.current-temp-far').html(currentTemp + "&deg;");
     	$('.high-temp-left').html(maxTemp + "&deg;");
     	$('.low-temp-left').html(minTemp + "&deg;");
        	$('#day-one-forecast-temp-hi').html(dayOneMax + "&deg;");
@@ -225,18 +223,22 @@ $("input[type=checkbox]").change(function(){
        	$('#day-five-forecast-temp-lo').html(dayFiveMin + "&deg;");
 
     }
-});
 
+    if (weatherDescription.includes("Cloudy")) {
+$('#weather-icon-wrapper-left').html("<i class='wi wi-day-cloudy current-weather-icon'></i>");
+console.log("cloudy today");
+    }
+});
+});
 // Change icons depending on weather
 
 //if (weatherDescription =  
 
 
 })
-});
+}
  // Finish doing everything
 
-  }
- });
+  });
 
 
