@@ -1,24 +1,76 @@
 <!DOCTYPE html>
 <head>
+
  <link rel="stylesheet" href="css/weather.css">
+ <link rel="stylesheet" href="css/weather-icons.min.css">
+ <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+<link href="https://fonts.googleapis.com/css?family=Muli|Noto+Sans|Rubik" rel="stylesheet">
+
+
+
 </head>
-<div>Weather app</div>
-
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/weather.js"></script>
-
 <body>
 	
+<!-- Left Section -->
 
 <div class="wrapper">
 	<div class="app-left">
-		
+
+	<div id="dateandtime"></div>
+	<div class="current-temp-icon-wrapper">
+		<i class="wi wi-day-cloudy"></i>
 	</div>
-	<div class="app-right">
-		
+	<div id="current-temp"></div>
+
+		<div id="weather-description"></div>
 	</div>
+
+
+
+<!-- Right Section -->
+
+<div class="app-right">
+	<div class="wrapper loc-wrapper-right">
+		<div id="location"></div>
+		    <label class="switch">
+      <input type="checkbox" class="switch-input">
+      <span class="switch-label" data-on="C" data-off="F"></span>
+      <span class="switch-handle"></span>
+    </label>
+	</div>	 
+		<div class="wrapper wrapper-right-two">   
+			<ul>
+				<li>
+				<i class="wi wi-wind-direction wi-from-e list-icons"></i>
+				<span class="list wind-speed"></span>
+				</li>
+				<li>
+				<i class="wi wi-cloud list-icons"></i>
+				<span class="list wind-direction"></span>
+				</li>
+				<li> 
+				<i class="wi wi-humidity list-icons"></i>
+				<span class="list humidity"></span> 
+				</li>
+				<li> 
+				<i class="wi wi-cloud list-icons"></i>
+				<span class="list cloudiness"></span> 
+				</li>
+				</ul>
+		</div>
+		<div id="day-one"></div>
+		<div id="day-two"></div>
+		<div id="day-three"></div>
+		<div id="day-four"></div>
+		<div id="day-five"></div>
+	</div>
+
+
+
+
 </div>
 
 </body>
 
-
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/weather.js"></script>
