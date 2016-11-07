@@ -51,7 +51,7 @@ width: 100%;
 
 .app-container {
 	position: relative;
-	top: 30%;
+	top: 20%;
 	width: 90%;
 box-shadow: 0  0px 8px 5px rgba(44,62,80, 0.2);
 margin: auto;
@@ -272,7 +272,7 @@ margin: auto;
 }
 
 .high-temp, .low-temp {
-	margin-left: 4px;
+	margin-left: 2px;
 	font-weight: bold;
 }
 
@@ -309,7 +309,7 @@ margin: auto;
 
 #location-icon {
 	font-size: 2rem;
-	color: #53F5D8;
+	color: #F62459;
 	display: inline-block;
 	margin-right: 15px ;
 	float: left ;
@@ -335,10 +335,10 @@ margin: auto;
   position: relative;
   display: inline-block;
   vertical-align: top;
-  left: 72%;
-  top: 5px;
-  width: 3.75em;
-  height: 2em;
+  left: 75%;
+  top: 10px;
+  width: 3em;
+  height: 1.5em;
   border-radius: 2em;
   cursor: pointer;
   background-image: -webkit-linear-gradient(top, #eeeeee, white 25px);
@@ -363,6 +363,7 @@ margin: auto;
   font-size: 0.85rem;
   text-transform: uppercase;
   background: #2C3E50;
+  opacity: 0.8;
   border-radius: inherit;
   -webkit-transition: 0.15s ease-out;
   -moz-transition: 0.15s ease-out;
@@ -385,21 +386,22 @@ margin: auto;
 }
 .switch-label:before {
   content: attr(data-off);
-  right: 10px;
-  line-height: 1.1em;
-  color: #Fff;
+  right: 8px;
+  line-height: 1.2em;
+  color: #53F5D8;
     font-weight: bold;
 }
 .switch-label:after {
   content: attr(data-on);
-  left: 10px;
-  line-height: 1.1em;
-  color: #fff;
+  left: 8px;
+  line-height: 1.2em;
+  color: #F62459;
   opacity: 0;
   font-weight: bold;
 }
 .switch-input:checked ~ .switch-label {
-  background: #53F5D8;
+  background: #2C3E50;
+  opacity: 0.8;
 }
 .switch-input:checked ~ .switch-label:before {
   opacity: 0;
@@ -410,10 +412,10 @@ margin: auto;
 
 .switch-handle {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 1.75em;
-  height: 1.75em;
+  top: 1.5px;
+  left: 1.5px;
+  width: 1.28em;
+  height: 1.28em;
   background: white;
   border-radius: 50%;
   -webkit-transition: left 0.15s ease-out;
@@ -421,12 +423,38 @@ margin: auto;
   -o-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
 }
+
 .switch-input:checked ~ .switch-handle {
-  left: 50%;
+  left: 53%;
 }
 
 .switch-green > .switch-input:checked ~ .switch-label {
   background: #2C3E50;
 }
 
+/*--------- Footer ---------
+--------------------------------- */
 
+footer {
+	font-family: 'Source sans pro', helvetica, arial, sans-serif;
+	font-weight: 700;
+	color: rgba(34,32,51,0.8);
+	clear: both;
+	position: absolute;
+	bottom: 20px;
+	left: calc(50% - 250px);
+	right: calc(50% - 250px);
+	margin: auto;
+	text-align: center;
+	width: 500px;
+}
+
+footer a, footer a:visited {
+	text-decoration: none;
+	color: rgba(34,32,51,10.8);
+}
+
+footer a:hover {
+	color: #F62459;
+	transition: ease all 0.3s;
+}

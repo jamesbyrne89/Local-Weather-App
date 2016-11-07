@@ -49,7 +49,7 @@ console.log("Got forecast data: ", wd);
 	var currentTemp = wd.currently.temperature.toFixed(0);
 	var maxTemp = wd.daily.data[0].temperatureMax.toFixed(0);
 	var minTemp = wd.daily.data[0].temperatureMin.toFixed(0);
-	var weatherDescription = wd.currently.summary;
+	var weatherDescription = wd.currently.icon.replace(/-|\s/g," ");
 	var precipChance = ((wd.daily.data[0].precipProbability) * 100).toFixed(0);
 	var windSpeed = ((wd.currently.windSpeed) * 2.23694).toFixed(0);
 	var humidity = ((wd.currently.humidity) * 100).toFixed(0);
@@ -71,9 +71,6 @@ $('.cloudiness').html(cloudiness + "\%");
 $('.humidity').html(humidity + "\%");
 
 
-if (weatherDescription == "light rain" || "light intensity shower rain" || "shower rain") {
-	$("#weather-icon-wrapper-left").html('<i class="wi wi-day-showers"></i>');
-}
 
 
 // Get five-day weather forecast from API
@@ -95,12 +92,17 @@ if (weatherDescription == "light rain" || "light intensity shower rain" || "show
 	var dayFiveMax = wd.daily.data[5].temperatureMax.toFixed(0);
 	var dayFiveMin = wd.daily.data[5].temperatureMin.toFixed(0);
 
-	var dayOneWeather = wd.daily.data[1].summary;
-	var dayTwoWeather = wd.daily.data[2].summary;
-	var dayThreeWeather = wd.daily.data[3].summary;
-	var dayFourWeather = wd.daily.data[4].summary;
-	var dayFiveWeather = wd.daily.data[5].summary;
+	var dayOneWeather = wd.daily.data[1].icon.replace(/-|\s/g," ");
+	var dayTwoWeather = wd.daily.data[2].icon.replace(/-|\s/g," ");
+	var dayThreeWeather = wd.daily.data[3].icon.replace(/-|\s/g," ");
+	var dayFourWeather = wd.daily.data[4].icon.replace(/-|\s/g," ");
+	var dayFiveWeather = wd.daily.data[5].icon.replace(/-|\s/g," ");
 
+	var dayOneIcon = wd.daily.data[1].icon;
+	var dayTwoIcon = wd.daily.data[2].icon;
+	var dayThreeIcon = wd.daily.data[3].icon;
+	var dayFourIcon = wd.daily.data[4].icon;
+	var dayFiveIcon = wd.daily.data[5].icon;
 
 
 // Place forecast values into HTML
@@ -116,6 +118,221 @@ $('#day-four-forecast-temp-lo').html(dayFourMin + "&deg;");
 $('#day-five-forecast-temp-hi').html(dayFiveMax + "&deg;");
 $('#day-five-forecast-temp-lo').html(dayFiveMin + "&deg;");
 
+
+// Get icons
+
+	var currentIcon = wd.currently.icon;
+
+// Change icon depending on weather
+
+    if (currentIcon == "clear-day") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
+    }
+   else if (currentIcon === "clear-night") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-night-clear current-weather-icon'></i>");
+    }
+    else if (currentIcon === "rain") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-rain current-weather-icon'></i>");
+    }
+    else if (currentIcon === "snow") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-snow current-weather-icon'></i>");
+    }
+    else if (currentIcon === "sleet") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-sleet current-weather-icon'></i>");
+    }
+    else if (currentIcon === "wind") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-windy current-weather-icon'></i>");
+    }
+    else if (currentIcon === "fog") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-fog current-weather-icon'></i>");
+    }
+    else if (currentIcon === "cloudy") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-cloudy current-weather-icon'></i>");
+    }
+    else if (currentIcon === "partly-cloudy-day") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-cloudy current-weather-icon'></i>");
+    }
+    else if (currentIcon === "partly-cloudy-night") {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-night-partly-cloudy current-weather-icon'></i>");
+    }
+    else {
+		$('#weather-icon-wrapper-left').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
+    }
+
+
+    if (dayOneIcon == "clear-day") {
+		$('#icon-day-one').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
+    }
+   else if (dayOneIcon === "clear-night") {
+		$('#icon-day-one').html("<i class='wi wi-night-clear forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "rain") {
+		$('#icon-day-one').html("<i class='wi wi-day-rain forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "snow") {
+		$('#icon-day-one').html("<i class='wi wi-day-snow forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "sleet") {
+		$('#icon-day-one').html("<i class='wi wi-day-sleet forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "wind") {
+		$('#icon-day-one').html("<i class='wi wi-day-windy forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "fog") {
+		$('#icon-day-one').html("<i class='wi wi-day-fog forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "cloudy") {
+		$('#icon-day-one').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "partly-cloudy-day") {
+		$('#icon-day-one').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayOneIcon === "partly-cloudy-night") {
+		$('#icon-day-one').html("<i class='wi wi-night-partly-cloudy forecast-list-icons'></i>");
+    }
+    else {
+		$('#icon-day-one').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
+    }
+
+
+    if (dayTwoIcon == "clear-day") {
+		$('#icon-day-two').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
+    }
+   else if (dayTwoIcon === "clear-night") {
+		$('#icon-day-two').html("<i class='wi wi-night-clear forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "rain") {
+		$('#icon-day-two').html("<i class='wi wi-day-rain forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "snow") {
+		$('#icon-day-two').html("<i class='wi wi-day-snow forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "sleet") {
+		$('#icon-day-two').html("<i class='wi wi-day-sleet forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "wind") {
+		$('#icon-day-two').html("<i class='wi wi-day-windy forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "fog") {
+		$('#icon-day-two').html("<i class='wi wi-day-fog forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "cloudy") {
+		$('#icon-day-two').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "partly-cloudy-day") {
+		$('#icon-day-two').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayTwoIcon === "partly-cloudy-night") {
+		$('#icon-day-two').html("<i class='wi wi-night-partly-cloudy forecast-list-icons'></i>");
+    }
+    else {
+		$('#icon-day-two').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
+    }
+
+
+    if (dayThreeIcon == "clear-day") {
+		$('#icon-day-three').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
+    }
+   else if (dayThreeIcon === "clear-night") {
+		$('#icon-day-three').html("<i class='wi wi-night-clear forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "rain") {
+		$('#icon-day-three').html("<i class='wi wi-day-rain forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "snow") {
+		$('#icon-day-three').html("<i class='wi wi-day-snow forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "sleet") {
+		$('#icon-day-three').html("<i class='wi wi-day-sleet forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "wind") {
+		$('#icon-day-three').html("<i class='wi wi-day-windy forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "fog") {
+		$('#icon-day-three').html("<i class='wi wi-day-fog forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "cloudy") {
+		$('#icon-day-three').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "partly-cloudy-day") {
+		$('#icon-day-three').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayThreeIcon === "partly-cloudy-night") {
+		$('#icon-day-three').html("<i class='wi wi-night-partly-cloudy forecast-list-icons'></i>");
+    }
+    else {
+		$('#icon-day-three').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
+    }
+ 
+ 
+    if (dayFourIcon == "clear-day") {
+		$('#icon-day-four').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
+    }
+   else if (dayFourIcon === "clear-night") {
+		$('#icon-day-four').html("<i class='wi wi-night-clear forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "rain") {
+		$('#icon-day-four').html("<i class='wi wi-day-rain forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "snow") {
+		$('#icon-day-four').html("<i class='wi wi-day-snow forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "sleet") {
+		$('#icon-day-four').html("<i class='wi wi-day-sleet forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "wind") {
+		$('#icon-day-four').html("<i class='wi wi-day-windy forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "fog") {
+		$('#icon-day-four').html("<i class='wi wi-day-fog forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "cloudy") {
+		$('#icon-day-four').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "partly-cloudy-day") {
+		$('#icon-day-four').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayFourIcon === "partly-cloudy-night") {
+		$('#icon-day-four').html("<i class='wi wi-night-partly-cloudy forecast-list-icons'></i>");
+    }
+    else {
+		$('#icon-day-four').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
+    }
+ 
+
+    if (dayFiveIcon == "clear-day") {
+		$('#icon-day-five').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
+    }
+   else if (dayFiveIcon === "clear-night") {
+		$('#icon-day-five').html("<i class='wi wi-night-clear forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "rain") {
+		$('#icon-day-five').html("<i class='wi wi-day-rain forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "snow") {
+		$('#icon-day-five').html("<i class='wi wi-day-snow forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "sleet") {
+		$('#icon-day-five').html("<i class='wi wi-day-sleet forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "wind") {
+		$('#icon-day-five').html("<i class='wi wi-day-windy forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "fog") {
+		$('#icon-day-five').html("<i class='wi wi-day-fog forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "cloudy") {
+		$('#icon-day-five').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "partly-cloudy-day") {
+		$('#icon-day-five').html("<i class='wi wi-day-cloudy forecast-list-icons'></i>");
+    }
+    else if (dayFiveIcon === "partly-cloudy-night") {
+		$('#icon-day-five').html("<i class='wi wi-night-partly-cloudy forecast-list-icons'></i>");
+    }
+    else {
+		$('#icon-day-five').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
+    }
  
 // Get date
 
@@ -224,17 +441,9 @@ $("input[type=checkbox]").change(function(){
 
     }
 
-    if (weatherDescription.includes("Cloudy")) {
-$('#weather-icon-wrapper-left').html("<i class='wi wi-day-cloudy current-weather-icon'></i>");
-console.log("cloudy today");
-    }
+
 });
 });
-// Change icons depending on weather
-
-//if (weatherDescription =  
-
-
 })
 }
  // Finish doing everything
