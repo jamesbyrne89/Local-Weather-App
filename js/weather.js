@@ -4,6 +4,7 @@ $(document).ready(function(){
   var lat;
   var lon;
   var city;
+  var state;
   
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success);
@@ -24,16 +25,15 @@ $(document).ready(function(){
         }
         if (place.results[0].address_components[i].types[0]==="administrative_area_level_1") {
           var state = place.results[0].address_components[i].long_name;
-          $("#state").html(state);
+        
         }
-
       }
     //end success
     function error() {
     alert("Geolocation requires a secure connection to work. Please add 'https://' to the beginning of this page's URL. (i.e. 'https://codepen.io/bethqiang/full/bZrZpa')");
   }
 
-    console.log(lat, lon);
+ 
     
 
 
@@ -58,12 +58,11 @@ console.log("Got forecast data: ", wd);
 
 
 // Place current weather values into HTML
-
 $('#current-temp').html(currentTemp + "&deg;");
 $('.high-temp-left').html(maxTemp + "&deg;");
 $('.low-temp-left').html(minTemp + "&deg;");
 $('#weather-description').html(weatherDescription);
-$('#location').html(city);
+$('#location').html(city +", " + state);
 $('.wind-speed').html(windSpeed + " mph");
 $('.wind-direction').html(windDirection);
 $('.precip-chance').html(precipChance + "\%");
@@ -77,7 +76,6 @@ $('.humidity').html(humidity + "\%");
 
 
 	var dayOneMax = wd.daily.data[1].temperatureMax.toFixed(0);
-	console.log(dayOneMax);
 	var dayOneMin = wd.daily.data[1].temperatureMin.toFixed(0);
 
 	var dayTwoMax = wd.daily.data[2].temperatureMax.toFixed(0);
