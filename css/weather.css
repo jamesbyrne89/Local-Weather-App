@@ -67,7 +67,7 @@ margin: auto;
 	/*background: linear-gradient(to top, #2C3E50 , #FD746C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-weight: normal;
 	height: 55vh;
-	width: 40%;
+	width: 30%;
 	float: left;
 	padding: 20px;
 	position: relative;
@@ -76,7 +76,7 @@ margin: auto;
 
 .current-temp-wrapper {
 	font-size: 7.5rem;
-	width: 60%;
+	width: 70%;
 	text-align: center;
 	margin-right: 0px;
 	margin-left: auto;
@@ -87,7 +87,7 @@ margin: auto;
 
 #hi-low-temp-wrapper-left {
 	font-size: 1.5rem;
-	width: 50%;
+	width: 60%;
 	text-align: center;
 	margin: -20px auto;
 }
@@ -201,7 +201,7 @@ margin: auto;
 	width: 30%;
 	text-align: center;
 	display: block;
-	margin-left: 30%;
+	margin-left: 20%;
 }
 
 .current-temp-far {
@@ -335,7 +335,7 @@ margin: auto;
   position: relative;
   display: inline-block;
   vertical-align: top;
-  left: 75%;
+  left: 55%;
   top: 10px;
   width: 3em;
   height: 1.5em;
@@ -389,7 +389,7 @@ margin: auto;
   right: 8px;
   line-height: 1.2em;
   color: #53F5D8;
-    font-weight: bold;
+    font-weight: 400;
 }
 .switch-label:after {
   content: attr(data-on);
@@ -397,7 +397,7 @@ margin: auto;
   line-height: 1.2em;
   color: #F62459;
   opacity: 0;
-  font-weight: bold;
+  font-weight: 400;
 }
 .switch-input:checked ~ .switch-label {
   background: #2C3E50;
@@ -460,38 +460,6 @@ footer a:hover {
 /*--------- Footer ---------
 --------------------------------- */
 
-@media only screen and (max-width: 480px)
-{
-
-
-}
-
-@media only screen and (max-width: 768px)
-{
-
-#dateandtime {
-    font-size: 2.75rem;
-}
-
-	.app-container {
-		top: 0px;
-	}
-	.app-container,.app-right, .app-left {
-	width: 100%;
-}
-
-.app-left{
-	margin: 0px;
-
-}
-
-.wrapper-right-top li, .wrapper-right-middle li,
-.wrapper-right-bottom li {
-	display: block;
-}
-
-}
-
 @media only screen and (max-width: 960px)
 {
 	.app-right
@@ -499,9 +467,122 @@ footer a:hover {
 	height: auto;
 		display: block;
 	float: none;
+	width: 100vw;
+	overflow-x: hidden;
+	padding: 0;
 }
+
+#icon-day-one, #icon-day-two, #icon-day-three,
+#icon-day-four, #icon-day-five {
+	display: block;
+	margin-bottom: 3px;
+}
+
+.high-temp, .low-temp {
+	margin-bottom: 200px;
+}
+
+.wrapper-right-middle ul {
+	height: auto;
+	text-align: left;
+	border: none;
+}
+
 .wrapper-right-bottom li {
     width: 19.5%;
+    margin-top: 50px;
+}
+.wrapper-right-middle, .wrapper-right-bottom {
+	height: auto;
+	padding: 30px;
+}
+	.app-container {
+		top: 0px;
+		width: 100vw;
+	}
+.wrapper-right-bottom p {
+margin-left: 0;
+}
+.forecast-list-icons {
+	display: block;
 }
 
 }
+@media only screen and (max-width: 768px)
+{
+
+#dateandtime {
+    font-size: 2.75rem;
+}
+
+
+	.app-container,.app-right, .app-left {
+	width: 100%;
+}
+
+.app-left{
+	margin: 0px;
+	height: auto;
+
+}
+.wrapper-right-middle li {
+	display: inline-block;
+	width: 40%;
+	margin-bottom: 40px;
+}
+
+.wrapper-right-top li, 
+.wrapper-right-bottom li {
+	display: block;
+}
+
+.current-temp-wrapper {
+	width: 90%;
+	margin: auto;
+	display: block;
+}
+
+.current-weather-icon, #current-temp {
+	display: inline-block;
+	margin-left: 0;
+}
+
+#current-temp {
+	margin-left: 0vw;
+}
+
+#weather-description {
+	display: inline-block;
+}
+
+#hi-low-temp-wrapper-left {
+margin: 0 auto;
+width: 90%;
+}
+
+.wrapper-right-bottom ul li {
+	width: 100%;
+	text-align: right;
+}
+.forecast-list-icons {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+.forecast-day-labels {
+	display: inline-block;
+	float: left;
+}
+
+}
+
+
+@media only screen and (max-width: 480px)
+{
+
+#weather-description {
+    display: block;
+
+}
+
+
