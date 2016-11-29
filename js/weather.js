@@ -42,7 +42,6 @@ $(document).ready(function() {
                 // Get current weather from API
 
                 $.getJSON('https://api.forecast.io/forecast/' + apiKey + '/' + lat + ',' + lon + '?units=si&callback=?', function(wd) {
-                    console.log("Got forecast data: ", wd);
 
                     var currentTemp = wd.currently.temperature.toFixed(0);
                     var maxTemp = wd.daily.data[0].temperatureMax.toFixed(0);
