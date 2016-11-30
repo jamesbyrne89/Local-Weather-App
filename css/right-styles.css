@@ -12,7 +12,7 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     font-weight: normal;
-    height: 55vh;
+    min-height: 55vh;
     width: calc(60% - 15px);
     float: left;
     flex: 1 0 auto;
@@ -21,7 +21,7 @@
 }
 .wrapper-right-top {
     border-bottom: solid 2px #f0f0f0;
-    height: 60px;
+    height: 60px ;
     padding-bottom: 20px;
     margin-top: 0px;
     display: flex;
@@ -30,7 +30,7 @@
 }
 .wrapper-right-middle {
     border-bottom: solid 2px #f0f0f0;
-    height: 180px;
+    height: 180px !important;
     padding-bottom: 20px;
     margin-top: 20px;
     top: 60px;
@@ -61,13 +61,12 @@
     font-weight: bold;
 }
 .wrapper-right-bottom {
-    height: 280px;
-    padding-bottom: 20px;
+    height: auto;
     margin-top: 20px;
 }
 .wrapper-right-bottom ul {
     padding-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 45px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

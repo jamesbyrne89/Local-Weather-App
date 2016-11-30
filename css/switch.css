@@ -65,17 +65,19 @@
 .switch-label:before {
     content: attr(data-off);
     right: 8px;
-    line-height: 1.2em;
+    line-height: 1em;
     color: #53F5D8;
     font-weight: 400;
+    font-size: 1.25em;
 }
 .switch-label:after {
     content: attr(data-on);
     left: 8px;
-    line-height: 1.2em;
+    line-height: 1em;
     color: #F62459;
     opacity: 0;
     font-weight: 400;
+     font-size: 1.25em;
 }
 .switch-input:checked ~ .switch-label {
     background: #2C3E50;
@@ -91,6 +93,7 @@
     position: absolute;
     top: 1px;
     left: 1px;
+    bottom: 1px;
     width: 1.4em;
     height: 1.4em;
     background: white;
