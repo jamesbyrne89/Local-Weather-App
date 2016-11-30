@@ -30,7 +30,7 @@
 }
 .wrapper-right-middle {
     border-bottom: solid 2px #f0f0f0;
-    height: 180px !important;
+    height: auto;
     padding-bottom: 20px;
     margin-top: 20px;
     top: 60px;
