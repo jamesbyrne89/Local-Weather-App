@@ -16,7 +16,7 @@
     width: calc(60% - 15px);
     float: left;
     flex: 1 0 auto;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     background-color: rgba(34, 32, 51, 0.9);
 }
 .wrapper-right-top {
