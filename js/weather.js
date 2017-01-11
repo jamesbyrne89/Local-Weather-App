@@ -12,7 +12,6 @@ $(document).ready(function() {
         alert("Geolocation services are not supported by your web browser.");
     }
 
-
     function success(position) {
             lat = position.coords.latitude;
             lon = position.coords.longitude;
@@ -25,16 +24,12 @@ $(document).ready(function() {
                     }
                     if (place.results[0].address_components[i].types[0] === "administrative_area_level_1") {
                         var state = place.results[0].address_components[i].long_name;
-
                     }
                 }
                 //end success
                 function error() {
                     alert("Geolocation requires a secure connection to work. Please add 'https://' to the beginning of this page's URL. (i.e. 'https://codepen.io/bethqiang/full/bZrZpa')");
                 }
-
-
-
 
                 var apiKey = "f0357c3104cec9981bd0216276f0778f";
 
@@ -99,7 +94,6 @@ $(document).ready(function() {
                     var dayFourIcon = wd.daily.data[4].icon;
                     var dayFiveIcon = wd.daily.data[5].icon;
 
-
                     // Place forecast values into HTML
 
                     $('#day-one-forecast-temp-hi').html(dayOneMax);
@@ -112,7 +106,6 @@ $(document).ready(function() {
                     $('#day-four-forecast-temp-lo').html(dayFourMin + "&deg;");
                     $('#day-five-forecast-temp-hi').html(dayFiveMax + "&deg;");
                     $('#day-five-forecast-temp-lo').html(dayFiveMin + "&deg;");
-
 
                     // Get icons
 
@@ -144,7 +137,6 @@ $(document).ready(function() {
                         $('#weather-icon-wrapper-left').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
                     }
 
-
                     if (dayOneIcon == "clear-day") {
                         $('#icon-day-one').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
                     } else if (dayOneIcon === "clear-night") {
@@ -168,7 +160,6 @@ $(document).ready(function() {
                     } else {
                         $('#icon-day-one').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
                     }
-
 
                     if (dayTwoIcon == "clear-day") {
                         $('#icon-day-two').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
@@ -194,7 +185,6 @@ $(document).ready(function() {
                         $('#icon-day-two').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
                     }
 
-
                     if (dayThreeIcon == "clear-day") {
                         $('#icon-day-three').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
                     } else if (dayThreeIcon === "clear-night") {
@@ -219,7 +209,6 @@ $(document).ready(function() {
                         $('#icon-day-three').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
                     }
 
-
                     if (dayFourIcon == "clear-day") {
                         $('#icon-day-four').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
                     } else if (dayFourIcon === "clear-night") {
@@ -243,7 +232,6 @@ $(document).ready(function() {
                     } else {
                         $('#icon-day-four').html("<i class='wi wi-day-sunny current-weather-icon'></i>");
                     }
-
 
                     if (dayFiveIcon == "clear-day") {
                         $('#icon-day-five').html("<i class='wi wi-day-sunny forecast-list-icons'></i>");
@@ -322,43 +310,28 @@ $(document).ready(function() {
                     $('.day-four').html(todayPlusFour);
                     $('.day-five').html(todayPlusFive);
 
-
                     // Calculate fahrenheit
 
-                    var currentTempFar = ((currentTemp) * (9 / 5) + 32).toFixed(0);
-                    var maxTempFar = ((maxTemp) * (9 / 5) + 32).toFixed(0);
-                    var minTempFar = ((minTemp) * (9 / 5) + 32).toFixed(0);
-
-                    var dayOneMaxFar = ((dayOneMax) * (9 / 5) + 32).toFixed(0);
-                    var dayOneMinFar = ((dayOneMin) * (9 / 5) + 32).toFixed(0);
-                    var dayTwoMaxFar = ((dayTwoMax) * (9 / 5) + 32).toFixed(0);
-                    var dayTwoMinFar = ((dayTwoMin) * (9 / 5) + 32).toFixed(0);
-                    var dayThreeMaxFar = ((dayThreeMax) * (9 / 5) + 32).toFixed(0);
-                    var dayThreeMinFar = ((dayThreeMin) * (9 / 5) + 32).toFixed(0);
-                    var dayFourMaxFar = ((dayFourMax) * (9 / 5) + 32).toFixed(0);
-                    var dayFourMinFar = ((dayFourMin) * (9 / 5) + 32).toFixed(0);
-                    var dayFiveMaxFar = ((dayFiveMax) * (9 / 5) + 32).toFixed(0);
-                    var dayFiveMinFar = ((dayFiveMin) * (9 / 5) + 32).toFixed(0);
+                    let convertToFahrenheit = (temp) => Math.floor(temp * (9 / 5) + 32);
 
                     // Switch between celsius and fahrenheit
 
                     $("input[type=checkbox]").change(function() {
                         if (this.checked) {
-                            $('#current-temp').addClass('.current-temp-far').removeClass('.current-temp').html(currentTempFar + "&deg;");
+                            $('#current-temp').addClass('.current-temp-far').removeClass('.current-temp').html(convertToFahrenheit(currentTemp) + "&deg;");
                             $('#current-temp').css('margin-left', '0px').css('text-align', 'center');
-                            $('.high-temp-left').html(maxTempFar + "&deg;");
-                            $('.low-temp-left').html(minTempFar + "&deg;");
-
-                            $('#day-one-forecast-temp-hi').html(dayOneMaxFar + "&deg;");
-                            $('#day-one-forecast-temp-lo').html(dayOneMinFar + "&deg;");
-                            $('#day-two-forecast-temp-hi').html(dayTwoMaxFar + "&deg;");
-                            $('#day-two-forecast-temp-lo').html(dayTwoMinFar + "&deg;");
-                            $('#day-three-forecast-temp-hi').html(dayThreeMaxFar + "&deg;");
-                            $('#day-three-forecast-temp-lo').html(dayThreeMinFar + "&deg;");
-                            $('#day-four-forecast-temp-hi').html(dayFourMaxFar + "&deg;");
-                            $('#day-four-forecast-temp-lo').html(dayFourMinFar + "&deg;");
-                            $('#day-five-forecast-temp-hi').html(dayFiveMaxFar + "&deg;");
-                            $('#day-five-forecast-temp-lo').html(dayFiveMinFar + "&deg;");
+                            $('.high-temp-left').html(convertToFahrenheit(maxTemp) + "&deg;");
+                            $('.low-temp-left').html(convertToFahrenheit(minTemp) + "&deg;");
+                            $('#day-one-forecast-temp-hi').html(convertToFahrenheit(dayOneMax) + "&deg;");
+                            $('#day-one-forecast-temp-lo').html(convertToFahrenheit(dayOneMin) + "&deg;");
+                            $('#day-two-forecast-temp-hi').html(convertToFahrenheit(dayTwoMax) + "&deg;");
+                            $('#day-two-forecast-temp-lo').html(convertToFahrenheit(dayTwoMin) +"&deg;");
+                            $('#day-three-forecast-temp-hi').html(convertToFahrenheit(dayThreeMax) + "&deg;");
+                            $('#day-three-forecast-temp-lo').html(convertToFahrenheit(dayThreeMin) + "&deg;");
+                            $('#day-four-forecast-temp-hi').html(convertToFahrenheit(dayFourMax) + "&deg;");
+                            $('#day-four-forecast-temp-lo').html(convertToFahrenheit(dayFourMin) + "&deg;");
+                            $('#day-five-forecast-temp-hi').html(convertToFahrenheit(dayFiveMax) + "&deg;");
+                            $('#day-five-forecast-temp-lo').html(convertToFahrenheit(dayFiveMin) + "&deg;");
                         } else {
                             $('#current-temp').addClass('.current-temp').removeClass('.current-temp-far').html(currentTemp + "&deg;");
                             $('#current-temp').css('text-align', 'center').css('margin-left', 'auto');
@@ -374,10 +347,7 @@ $(document).ready(function() {
                             $('#day-four-forecast-temp-lo').html(dayFourMin + "&deg;");
                             $('#day-five-forecast-temp-hi').html(dayFiveMax + "&deg;");
                             $('#day-five-forecast-temp-lo').html(dayFiveMin + "&deg;");
-
                         }
-
-
                     });
                 });
             })
