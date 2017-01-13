@@ -25,11 +25,12 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     border: 1px solid grey;
     display: inline-block;
     vertical-align: top;
     position: relative;
+    overflow: auto;
 }
 body:before {
     position: absolute;
