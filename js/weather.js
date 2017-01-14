@@ -38,9 +38,9 @@ $(document).ready(function() {
 
                 $.getJSON('https://api.forecast.io/forecast/' + apiKey + '/' + lat + ',' + lon + '?units=si&callback=?', function(wd) {
 
-                    var currentTemp = wd.currently.temperature.toFixed(0);
-                    var maxTemp = wd.daily.data[0].temperatureMax.toFixed(0);
-                    var minTemp = wd.daily.data[0].temperatureMin.toFixed(0);
+                    var currentTemp = Math.floor(wd.currently.temperature);
+                    var maxTemp = Math.floor(wd.daily.data[0].temperatureMax);
+                    var minTemp = Math.floor(wd.daily.data[0].temperatureMin);
                     var weatherDescription = wd.currently.icon.replace(/-|\s/g, " ");
                     var precipChance = ((wd.daily.data[0].precipProbability) * 100).toFixed(0);
                     var windSpeed = ((wd.currently.windSpeed) * 2.23694).toFixed(0);

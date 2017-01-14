@@ -190,6 +190,7 @@
 @media (max-width: 480px) {
     .app-container {
         width: 100% !important;
+        margin: 0 !important;
     }
     #weather-description {
         display: block;
