@@ -1,6 +1,6 @@
 # Local-Weather-App
-A desktop app to show the current weather conditions and a 5-day forecast.<br>
-Created using HTMl, CSS and jQuery.<br>
+A desktop app to show the current weather conditions and a 5-day forecast for the user's location.<br>
+Created using HTML, CSS, Sass and jQuery and featuring a responsive design.<br>
 Hosted on Github at https://jamesbyrne89.github.io/Local-Weather-App.<br>
 
 ### API
