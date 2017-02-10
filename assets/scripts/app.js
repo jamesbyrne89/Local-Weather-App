@@ -51,8 +51,8 @@ $(document).ready(function() {
 
                     // Place current weather values into HTML
                     $('#current-temp').html(currentTemp + "&deg;");
-                    $('.high-temp-left').html(maxTemp + "&deg;");
-                    $('.low-temp-left').html(minTemp + "&deg;");
+                    $('#current-hi').html(maxTemp + "&deg;");
+                    $('#current-lo').html(minTemp + "&deg;");
                     $('#weather-description').html(weatherDescription);
                     $('#location').html(city + ", " + state);
                     $('.wind-speed').html(windSpeed + " mph");
