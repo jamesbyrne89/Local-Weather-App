@@ -1,0 +1,19 @@
+/* ***** MEDIA QUERIES ***** */
+  
+@define-mixin at425 {
+     @media (max-width: 425px) {
+     	@mixin-content;
+     }
+  }
+
+@define-mixin at600 {
+     @media (max-width: 600px) {
+     	@mixin-content;
+     }
+  }
+
+  @define-mixin at1200 {
+     @media (max-width: 1200px) {
+     	@mixin-content;
+     }
+  }
