@@ -1,0 +1,27 @@
+.details-section__top-wrapper {
+    border-bottom: solid 2px #f0f0f0;
+    padding-bottom: 20px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+        @mixin atMed {
+    margin-top: 40px;
+  }
+      @mixin atLarge {
+    margin-top: 0px;
+  }
+}
+
+.location {
+    flex-wrap: nowrap;
+}
+.location__name {
+    font-size: 1rem;
+    font-weight: bold;
+    float: left;
+    flex: 0 0 auto;
+        @mixin atMed {
+    font-size: 2rem;
+  }
+}

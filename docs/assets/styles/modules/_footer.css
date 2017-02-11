@@ -1,0 +1,35 @@
+/*--------- Footer ---------
+--------------------------------- */
+
+.site-footer {
+    font-family: 'Source sans pro', helvetica, arial, sans-serif;
+    font-weight: 300;
+    background: rgba(34, 32, 51, 1);
+    clear: both;
+    text-align: center;
+    padding: 30px 15px 15px 15px;
+    color: #fff;
+    font-size: 0.875rem;
+    width: 100%;
+    margin: 0 auto;
+        @mixin atMed {
+    padding-top: 0px;
+    width: 80%;
+  }
+       @mixin atLarge {
+    background: transparent;
+    position: fixed;
+    bottom: 0px;
+    left: 10%;
+  }
+}
+.site-footer a,
+.site-footer a:visited {
+    text-decoration: none;
+    opacity: 0.8;
+    color: #fff;
+}
+.site-footer a:hover {
+    color: #F62459;
+    transition: ease all 0.3s;
+}

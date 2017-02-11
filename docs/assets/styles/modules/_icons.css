@@ -1,0 +1,68 @@
+/*--------- Icons ---------
+--------------------------------- */
+
+.wi {
+    display: block !important;
+    line-height: normal !important;
+}
+.list-icons {
+    font-size: 2rem;
+    line-height: 1;
+    margin: auto;
+    color: #53F5D8;
+     width: 100%;
+}
+
+.forecast__icon {
+    font-size: 1.5rem;
+    margin: auto;
+    text-align: center;
+    width: 33.33%;
+        @mixin atLarge {
+    width: 100%;
+  }
+        @mixin atMedLarge {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+   
+}
+.current-weather-icon {
+    display: inline-block !important;
+    margin-left: 0;
+    font-size: 4.5rem;
+    @mixin atMed {
+    font-size: 6rem;
+  }
+      @mixin atLarge {
+    font-size: 7rem;
+  }
+      @mixin atLargest {
+    font-size: 8rem;
+  }
+}
+.current__weather-icon-wrapper {
+    display: block;
+    height: 100px;
+  @mixin atMed {
+    height: 140px;
+  }   
+ @mixin atMedLarge {
+    height: 150px;
+  }
+        @mixin atLarge {
+    min-height: 160px;
+    height: auto;
+  }
+}
+.location__icon {
+    font-size: 1rem;
+    color: #F62459;
+    display: inline-block;
+    margin-right: 15px;
+    float: left;
+        @mixin atMed {
+    font-size: 2rem;
+  }
+}

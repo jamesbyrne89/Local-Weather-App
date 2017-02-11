@@ -1,0 +1,21 @@
+.current-time {
+    font-size: 0.875rem;
+    color: #fff;
+    font-weight: bold;
+    margin: 0px auto 20px auto;
+    text-align: center;
+    height: auto;
+    opacity: 0.8;
+    position: relative;
+             @mixin atMed {
+    font-size: 2rem;
+  }
+      @mixin atLarge {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+        @mixin atLargest {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+}
