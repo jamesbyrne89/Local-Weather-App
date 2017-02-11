@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Source sans pro', helvetica, arial, sans-serif;
-    background-image: url("assets/images/weather-3.jpg");
+    background-image: url("../../assets/images/weather-3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
