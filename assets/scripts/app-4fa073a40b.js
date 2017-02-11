@@ -283,21 +283,21 @@ $(document).ready(function() {
                     months[11] = "December";
 
                     var current_date = new Date();
-                    month_value = current_date.getMonth();
-                    date_value = current_date.getDate();
-                    day_value = current_date.getDay();
-                    year_value = current_date.getFullYear();
-                    d1 = ((day_value + 1) % 7);
-                    d2 = ((day_value + 2) % 7);
-                    d3 = ((day_value + 3) % 7);
-                    d4 = ((day_value + 4) % 7);
-                    d5 = ((day_value + 5) % 7);
+                    let month_value = current_date.getMonth();
+                    let date_value = current_date.getDate();
+                    let day_value = current_date.getDay();
+                    let year_value = current_date.getFullYear();
+                    let d1 = ((day_value + 1) % 7);
+                    let d2 = ((day_value + 2) % 7);
+                    let d3 = ((day_value + 3) % 7);
+                    let d4 = ((day_value + 4) % 7);
+                    let d5 = ((day_value + 5) % 7);
 
-                    todayPlusOne = days[d1].substring(0, 3);
-                    todayPlusTwo = days[d2].substring(0, 3);
-                    todayPlusThree = days[d3].substring(0, 3);
-                    todayPlusFour = days[d4].substring(0, 3);
-                    todayPlusFive = days[d5].substring(0, 3);
+                    let todayPlusOne = days[d1].substring(0, 3);
+                    let todayPlusTwo = days[d2].substring(0, 3);
+                    let todayPlusThree = days[d3].substring(0, 3);
+                    let todayPlusFour = days[d4].substring(0, 3);
+                    let todayPlusFive = days[d5].substring(0, 3);
 
                     // Place date information into HTML
 

@@ -33,6 +33,7 @@
     position: relative;
     font-weight: 300;
     margin-bottom: 20px;
+    height: auto;
      @mixin atMed {
     display: flex;
   }
@@ -42,7 +43,7 @@
     margin-top: 0;
   }
   @mixin atLargest {
-    height: 100%;
+    height: auto;
   }
 }
 .summary-section__hi-low-temp {
