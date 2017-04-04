@@ -14,6 +14,8 @@
     margin: 0 auto;
         @mixin atMed {
     padding-top: 0px;
+  }
+        @mixin atLarge {
     width: 80%;
   }
        @mixin atLarge {
