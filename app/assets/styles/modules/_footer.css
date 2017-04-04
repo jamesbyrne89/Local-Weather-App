@@ -15,7 +15,7 @@
         @mixin atMed {
     padding-top: 0px;
   }
-        @mixin atLarge {
+        @mixin atMedLarge {
     width: 80%;
   }
        @mixin atLarge {

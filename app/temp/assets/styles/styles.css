@@ -704,7 +704,7 @@ body:before {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
 
     .site-footer {
         width: 80%;
