@@ -2,8 +2,8 @@
 
 <head>
 
-<meta name=viewport content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/styles/styles-e98bede7d0.css"/>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/styles/styles-f993cba09f.css"/>
     <link rel="stylesheet" href="assets/styles/vendor/weather-icons.min.css">
     <link rel="stylesheet" href="assets/styles/vendor/weather-icons-wind.min.css">
     <link href="/assets/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900" rel="stylesheet">
     <title>Local Weather App by James Byrne | Front Developer in London</title>
 </head>
+
 <body>
     <!-- Left Section -->
     <main class="app-container">
@@ -19,25 +20,30 @@
 
             <time class="current-time" id="dateandtime"></time>
             <div class="summary-section__current">
-            <div class="current--inner-wrapper">
-                <span class="current__weather-icon-wrapper" id="weather-icon-wrapper-left">
-				<i class="wi wi-day-cloudy current-weather-icon"></i>
-			</span>
-                <div class="summary-section__current__desc" id="weather-description">
+                <div class="current--inner-wrapper">
+                    <span class="current__weather-icon-wrapper" id="weather-icon-wrapper-left">
+                        <div class="loader">
+                            <div class="loader__figure"></div>
+                        </div>
+                    </span>
+                    <div class="summary-section__current__desc" id="weather-description">
+                    </div>
                 </div>
-               </div> 
-              <div class="current--inner-wrapper">  
-                <span id="current-temp" class="summary-section__current__temp"></span>
-                <div class="summary-section__hi-low-temp">H<span id="current-hi" class="summary-section__current__hi-temp"></span>L<span id="current-lo" class="summary-section__current__lo-temp"></span>
+                <div class="current--inner-wrapper">
+                    <span id="current-temp" class="summary-section__current__temp"></span>
+                    <div class="summary-section__hi-low-temp">H
+                        <span id="current-hi" class="summary-section__current__hi-temp"></span>L
+                        <span id="current-lo" class="summary-section__current__lo-temp"></span>
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
         <!-- Right Section -->
         <section class="details-section">
             <div class="details-section__top-wrapper">
                 <div class="location">
-                    <div class="location__icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <div class="location__icon">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                     </div>
                     <div class="location__name" id="location"></div>
                 </div>
@@ -74,37 +80,64 @@
                 <ul class="forecast">
                     <li class="forecast__day">
                         <div class="forecast__day__label day-one"></div>
-                            <div id="icon-day-one" class="list-icons forecast__icon"></div>
-                             <div class="hi-low-temp-wrapper--right">
-                                <span id="day-one-forecast-temp-hi" class="high-temp"></span><span id="day-one-forecast-temp-lo" class="low-temp"></span>
+                        <div id="icon-day-one" class="list-icons forecast__icon">
+                            <div class="loader">
+                                <div class="loader__figure"></div>
                             </div>
+                        </div>
+                        <div class="hi-low-temp-wrapper--right">
+                            <span id="day-one-forecast-temp-hi" class="high-temp"></span>
+                            <span id="day-one-forecast-temp-lo" class="low-temp"></span>
+                        </div>
                     </li>
                     <li class="forecast__day">
                         <div class="forecast__day__label day-two"></div>
-                            <div id="icon-day-two" class="list-icons forecast__icon"></div>
-                            <div class="hi-low-temp-wrapper--right">
-                                <span id="day-two-forecast-temp-hi" class="high-temp"></span><span id="day-two-forecast-temp-lo" class="low-temp"></span>
+                        <div id="icon-day-two" class="list-icons forecast__icon">
+                            <div class="loader">
+                                <div class="loader__figure"></div>
                             </div>
+                        </div>
+                        <div class="hi-low-temp-wrapper--right">
+                            <span id="day-two-forecast-temp-hi" class="high-temp"></span>
+                            <span id="day-two-forecast-temp-lo" class="low-temp"></span>
+                        </div>
                     </li>
                     <li class="forecast__day">
                         <div class="forecast__day__label day-three"></div>
-                            <div id="icon-day-three" class="list-icons forecast__icon"></div>
-                              <div class="hi-low-temp-wrapper--right">
-                                    <span id="day-three-forecast-temp-hi" class="high-temp"></span><span id="day-three-forecast-temp-lo" class="low-temp"></span>
+                        <div id="icon-day-three" class="list-icons forecast__icon">
+                            <div class="loader">
+                                <div class="loader__figure"></div>
                             </div>
+                        </div>
+                        <div class="hi-low-temp-wrapper--right">
+                            <span id="day-three-forecast-temp-hi" class="high-temp"></span>
+                            <span id="day-three-forecast-temp-lo" class="low-temp"></span>
+                        </div>
                     </li>
                     <li class="forecast__day">
                         <div class="forecast__day__label day-four"></div>
-                            <div id="icon-day-four" class="list-icons forecast__icon"></div>
-                            <div class="hi-low-temp-wrapper--right">
-                                <span id="day-four-forecast-temp-hi" class="high-temp"></span><span id="day-four-forecast-temp-lo" class="low-temp"></span>
+                        <div id="icon-day-four" class="list-icons forecast__icon">
+                            <div class="loader">
+                                <div class="loader__figure"></div>
+                            </div>
+                        </div>
+                        <div class="hi-low-temp-wrapper--right">
+                            <span id="day-four-forecast-temp-hi" class="high-temp"></span>
+                            <span id="day-four-forecast-temp-lo" class="low-temp"></span>
                         </div>
                     </li>
                     <li class="forecast__day">
                         <div class="forecast__day__label day-five"></div>
-                            <div id="icon-day-five" class="list-icons forecast__icon"></div>
-                            <div class="hi-low-temp-wrapper--right">
-                            <span id="day-five-forecast-temp-hi" class="high-temp"></span><span id="day-five-forecast-temp-lo" class="low-temp"></span>
+                        <div id="icon-day-five" class="list-icons forecast__icon">
+                            <div class="loader">
+                                <div class="loader__figure"></div>
+                            </div>
+                        </div>
+                        <div class="hi-low-temp-wrapper--right">
+                            <span id="day-five-forecast-temp-hi" class="high-temp">
+                            </span>
+                            <span id="day-five-forecast-temp-lo" class="low-temp">
+                            </span>
                         </div>
 
                     </li>
@@ -114,15 +147,15 @@
 
 
         </section>
-   
+
     </main>
-     <footer class="site-footer">
-    Created by <a href="http://jamestbyrne.com">James Byrne</a>. Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a>.
-</footer>
+    <footer class="site-footer">
+        Created by
+        <a href="http://jamestbyrne.com">James Byrne</a>. Powered by
+        <a href="https://darksky.net/poweredby/">Dark Sky</a>.
+    </footer>
 </body>
 
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-  <script src="assets/scripts/app-4fa073a40b.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+<script src="assets/scripts/app-ecef7a35da.js"></script>

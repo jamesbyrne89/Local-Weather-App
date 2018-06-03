@@ -2,104 +2,131 @@
 --------------------------------- */
 
 .details-section {
-    color: #fff;
-    /* fallback for old browsers */   
-    color: -webkit-linear-gradient(to left, #2C3E50, #FD746C);
-    /* Chrome 10-25, Safari 5.1-6 */   
-    color: linear-gradient(to left, #2C3E50, #FD746C);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
-    font-weight: normal;
-    width: 100%;
-    float: left;
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0px 20px;
-    background-color: rgba(34, 32, 51, 1);
-         @mixin atLarge {
+  color: #fff;
+  /* fallback for old browsers */
+  color: -webkit-linear-gradient(to left, #2c3e50, #fd746c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to left, #2c3e50, #fd746c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-weight: normal;
+  width: 100%;
+  float: left;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 20px;
+  background-color: rgba(34, 32, 51, 1);
+  @mixin atLarge {
     width: 65%;
     background-color: rgba(34, 32, 51, 0.9);
     padding: 2em 4em;
   }
 }
 
-
 .details-section__subtitle {
-    font-weight: bold;
-    color: #fff;
-    display: block;
-    margin-top: 0;
-    margin-bottom: 15px;
-        @mixin atMed {
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 15px;
+  @mixin atMed {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
-      @mixin atLargest {
+  @mixin atLargest {
     margin-bottom: 25px;
   }
 }
 
 .details-section__bottom-wrapper {
-    height: auto;
-    margin-top: 20px;
-        @mixin atMed {
+  height: auto;
+  margin-top: 20px;
+  @mixin atMed {
     margin-top: 25px;
   }
-      @mixin atLargest {
+  @mixin atLargest {
     margin-top: 40px;
   }
 }
 
-
-
 .forecast {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-    flex-direction: column;
-        @mixin atLarge {
-    flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  @mixin atLarge {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
 .forecast__day {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-        @mixin atMed {
-            margin-bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+  min-height: 2rem;
+  @mixin atMed {
+    margin-bottom: 5px;
   }
-    @mixin atLarge {
-    flex-direction: column;
+  @mixin atLarge {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
   }
 }
 
-
-
 .forecast__day__label {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1rem;
-    width: 33.3%;
-        @mixin atMed {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  width: 33.3%;
+  @mixin atMed {
     font-size: 1.25rem;
-    
   }
-      @mixin atLarge {
+  @mixin atLarge {
     text-align: center;
     width: 100%;
   }
 }
 
 .hi-low-temp-wrapper--right {
-    text-align: center;
-    display: flex;
-    justify-content: flex-end;
-    width: 33.3%;
-        @mixin atLarge {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 33.3%;
+  @mixin atLarge {
     width: 100%;
   }
 }

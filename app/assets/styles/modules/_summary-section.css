@@ -2,20 +2,27 @@
 --------------------------------- */
 
 .summary-section {
-    background-color: rgba(34, 32, 51, 1);
-    /* fallback for old browsers */
-    /*  background: -webkit-linear-gradient(to top, #2C3E50 , #FD746C); /* Chrome 10-25, Safari 5.1-6 */
-    /*background: linear-gradient(to top, #2C3E50 , #FD746C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    font-weight: normal;
-    height: auto;
-    width: 100%;
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    float: left;
-    padding: 20px ;
-         @mixin atLarge {
+  background-color: rgba(34, 32, 51, 1);
+  /* fallback for old browsers */
+  /*  background: -webkit-linear-gradient(to top, #2C3E50 , #FD746C); /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to top, #2C3E50 , #FD746C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-weight: normal;
+  height: auto;
+  width: 100%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  float: left;
+  padding: 20px;
+  @mixin atLarge {
     width: 32%;
     background-color: rgba(34, 32, 51, 0.9);
     padding: 2em;
@@ -26,19 +33,25 @@
   }
 }
 .summary-section__current {
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #fff;
-    position: relative;
-    font-weight: 300;
-    margin-bottom: 20px;
-    height: auto;
-     @mixin atMed {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  color: #fff;
+  position: relative;
+  font-weight: 300;
+  margin-bottom: 20px;
+  height: auto;
+  @mixin atMed {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
-    @mixin atLarge {
+  @mixin atLarge {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     margin-top: 0;
   }
@@ -47,72 +60,72 @@
   }
 }
 .summary-section__hi-low-temp {
-    font-size: 1.25rem;
-    width: 100%;
-    text-align: center;
-    margin:  auto;
-        @mixin atLarge {
+  font-size: 1.25rem;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  @mixin atLarge {
     font-size: 2rem;
   }
 }
 
 .current--inner-wrapper {
-    width: 40%;
-    margin: auto ;
-    margin-top: 40px;
-            @mixin atMed {
+  width: 40%;
+  margin: auto;
+  margin-top: 40px;
+  min-height: 8rem;
+  @mixin atMed {
     margin-top: 20px;
   }
-        @mixin atLarge {
+  @mixin atLarge {
     width: 100%;
   }
 }
 
 .summary-section__current__temp {
-    font-size: 5rem;
-    color: #fff;
-    font-weight: 800;
-    width: 100%;
-    text-align: center;
-    display: block;
-    height: 100px;
-    @mixin atMed {
+  font-size: 5rem;
+  color: #fff;
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+  display: block;
+  height: 100px;
+  @mixin atMed {
     height: 140px;
     font-size: 7rem;
   }
-@mixin atMedLarge {
-    
+  @mixin atMedLarge {
     height: 160px;
   }
-    @mixin atLarge {
+  @mixin atLarge {
     font-size: 7.5rem;
   }
-        @mixin atLargest {
+  @mixin atLargest {
     font-size: 8.5rem;
   }
 }
 .current-temp-far {
-    font-size: 9.375rem;
-    color: #fff;
-    font-weight: 800;
-    width: 30%;
-    text-align: center;
-    display: block;
-    margin-left: 0px;
+  font-size: 9.375rem;
+  color: #fff;
+  font-weight: 800;
+  width: 30%;
+  text-align: center;
+  display: block;
+  margin-left: 0px;
 }
 .summary-section__current__desc {
-    font-size: 1.25rem;
-    color: #fff;
-    font-weight: bold;
-    margin: 0px auto -16px auto;
-    text-align: center;
-    opacity: 0.8;
-    clear: both;
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 0px auto -16px auto;
+  text-align: center;
+  opacity: 0.8;
+  clear: both;
 }
 
 .summary-section__current__hi-temp,
 .summary-section__current__lo-temp {
-    margin: 0px 5px;
-    font-weight: 400;
-    display: inline-block;
+  margin: 0px 5px;
+  font-weight: 400;
+  display: inline-block;
 }
